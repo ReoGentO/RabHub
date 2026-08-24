@@ -2493,7 +2493,7 @@ local Library do
 
         Library.Pages.Section = function(self, Data)
             Data = Data or { }
-
+			
             local Section = {
                 Window = self.Window,
                 Page = self,
@@ -2784,6 +2784,7 @@ local Library do
                 Toggle:Set(Value)
             end
 
+						Toggle.Instance = Items
             return Toggle 
         end
 
@@ -2900,10 +2901,12 @@ local Library do
                 SubItems["Inline"]:Connect("MouseButton1Down", function()
                     Library:SafeCall(NewButton.Callback)
                 end)
-
+								
+								NewButton.Instance = SubItems["NewButton"].Instance
                 return NewButton
             end
 
+						Button.Instance = Items
             return Button
         end
 
@@ -3067,7 +3070,8 @@ local Library do
             Library.SetFlags[Slider.Flag] = function(Value)
                 Slider:Set(Value)
             end
-
+						
+						Slider.Instance = Items
             return Slider
         end
 
@@ -3513,7 +3517,7 @@ local Library do
             Library.SetFlags[Dropdown.Flag] = function(Value)
                 Dropdown:Set(Value)
             end
-
+						Dropdown.Instance = Items
             return Dropdown 
         end
 
@@ -3646,7 +3650,7 @@ local Library do
 
                 return NewKeybind
             end
-
+						Label.Instance = Items
             return Label
         end
 
@@ -3779,7 +3783,7 @@ local Library do
             Library.SetFlags[Textbox.Flag] = function(Value)
                 Textbox:Set(Value)
             end
-
+						Textbox.Instance = Items
             return Textbox
         end
     end
