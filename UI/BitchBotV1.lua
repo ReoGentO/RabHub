@@ -3650,6 +3650,12 @@ local Library do
 
                 return NewKeybind
             end
+
+            function Label:Set(text)
+                local text = tostring(text)
+                Items["Text"].Instance.Text = text
+            end
+            
 			Label.Instance = Items
             return Label
         end
