@@ -2784,7 +2784,7 @@ local Library do
                 Toggle:Set(Value)
             end
 
-						Toggle.Instance = Items
+			Toggle.Instance = Items
             return Toggle 
         end
 
@@ -2902,11 +2902,11 @@ local Library do
                     Library:SafeCall(NewButton.Callback)
                 end)
 								
-								NewButton.Instance = SubItems["NewButton"].Instance
+				NewButton.Instance = SubItems
                 return NewButton
             end
 
-						Button.Instance = Items
+			Button.Instance = Items
             return Button
         end
 
@@ -3071,7 +3071,7 @@ local Library do
                 Slider:Set(Value)
             end
 						
-						Slider.Instance = Items
+			Slider.Instance = Items
             return Slider
         end
 
@@ -3517,7 +3517,7 @@ local Library do
             Library.SetFlags[Dropdown.Flag] = function(Value)
                 Dropdown:Set(Value)
             end
-						Dropdown.Instance = Items
+			Dropdown.Instance = Items
             return Dropdown 
         end
 
@@ -3650,7 +3650,7 @@ local Library do
 
                 return NewKeybind
             end
-						Label.Instance = Items
+			Label.Instance = Items
             return Label
         end
 
@@ -3783,7 +3783,7 @@ local Library do
             Library.SetFlags[Textbox.Flag] = function(Value)
                 Textbox:Set(Value)
             end
-						Textbox.Instance = Items
+			Textbox.Instance = Items
             return Textbox
         end
     end
