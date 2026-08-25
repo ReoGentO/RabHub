@@ -3769,6 +3769,12 @@ local Library do
                 end
             end
 
+            function Textbox:SetPlaceholder(Text)
+                Text = tostring(Text)
+                Items["Input"].Instance.PlaceholderText = Text
+                self.Placeholder = Text
+            end
+
             function Textbox:SetVisibility(Bool)
                 Items["Textbox"].Instance.Visible = Bool
             end
