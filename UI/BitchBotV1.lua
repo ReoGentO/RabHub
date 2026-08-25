@@ -194,7 +194,8 @@ local Library do
 
         UnnamedConnections = 0,
         UnnamedFlags = 0,
-
+		
+		Unloaded = false,
         Holder = nil,
         NotifHolder = nil,
         UnusedHolder = nil,
@@ -748,6 +749,13 @@ local Library do
 
         Library = nil 
         getgenv().Library = nil
+
+        Library = {
+            Unloaded = true
+		}
+        getgenv().Library = {
+            Unloaded = true
+		}
     end
 
     Library.GetImage = function(self, Image)
