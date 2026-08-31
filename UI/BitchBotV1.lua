@@ -1426,7 +1426,7 @@ local Library do
             if self.IsOpen then 
                 Items["ColorpickerWindow"].Instance.Visible = true
 
-                RenderStepped = RunService.RenderStepped:Connect(function()
+                RenderStepped = Library:Connect(RenderStepped:Connect, function()
                     Items["ColorpickerWindow"].Instance.Position = UDim2New(0, Items["ColorpickerButton"].Instance.AbsolutePosition.X, 0, Items["ColorpickerButton"].Instance.AbsolutePosition.Y + 26)
                 end)    
 
@@ -1439,7 +1439,7 @@ local Library do
                 Library.OpenFrames[self] = self
             else
                 if RenderStepped then 
-                    RenderStepped:Disconnect()
+                    RenderStepped.Connection:Disconnect()
                     RenderStepped = nil
                 end
 
@@ -1922,7 +1922,7 @@ local Library do
             if self.IsOpen then 
                 Items["Window"].Instance.Visible = true
 
-                RenderStepped = RunService.RenderStepped:Connect(function()
+                RenderStepped = Library:Connect(RunService.RenderStepped, function()
                     Items["Window"].Instance.Position = UDim2New(0, Items["KeyButton"].Instance.AbsolutePosition.X, 0, Items["KeyButton"].Instance.AbsolutePosition.Y + 25)
                 end)
 
@@ -1935,7 +1935,7 @@ local Library do
                 Library.OpenFrames[self] = self
             else
                 if RenderStepped then 
-                    RenderStepped:Disconnect()
+                    RenderStepped.Connection:Disconnect()
                     RenderStepped = nil
                 end
 
@@ -3448,7 +3448,7 @@ local Library do
                     Items["OptionHolder"].Instance.Visible = true
                     Items["OpenIcon"]:Tween(nil, {Rotation = 90})
 
-                    RenderStepped = RunService.RenderStepped:Connect(function()
+                    RenderStepped = Library:Connect(RunService.RenderStepped, function()
                         Items["OptionHolder"].Instance.Position = UDim2New(0, Items["RealDropdown"].Instance.AbsolutePosition.X, 0, Items["RealDropdown"].Instance.AbsolutePosition.Y + 20)
                         Items["OptionHolder"].Instance.Size = UDim2New(0, Items["RealDropdown"].Instance.AbsoluteSize.X, 0, 0)
                     end)
@@ -3468,7 +3468,7 @@ local Library do
                     Items["OpenIcon"]:Tween(nil, {Rotation = 0})
 
                     if RenderStepped then 
-                        RenderStepped:Disconnect()
+                        RenderStepped.Connection:Disconnect()
                         RenderStepped = nil
                     end
                 end
