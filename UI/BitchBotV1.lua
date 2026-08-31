@@ -747,15 +747,19 @@ local Library do
             self.Holder:Clean()
         end
 
-        Library = nil 
-        getgenv().Library = nil
-
-        Library = {
-            Unloaded = true
-		}
-        getgenv().Library = {
-            Unloaded = true
-		}
+        if self.UnusedHolder then
+	        self.UnusedHolder:Clean()
+	    end
+	
+	    Library = nil 
+	    getgenv().Library = nil
+	
+	    local unloadedState = {
+	        Unloaded = true
+	    }
+	    
+	    Library = unloadedState
+	    getgenv().Library = unloadedState
     end
 
     Library.GetImage = function(self, Image)
